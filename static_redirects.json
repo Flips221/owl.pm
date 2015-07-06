@@ -1,0 +1,18 @@
+{
+	"pd": "http://pd.owlgaming.net",
+	"gun": "http://pd.mta.link/index.php?forums/firearm-license-desk.518/",
+
+	"gov": "/f/459",
+	"laws": "/f/463",
+
+	"fd": "http://fd.owlgaming.net",
+
+	"rules": "/f/366",
+	"news": "/f/500",
+	"script": "/f/369",
+	"ints": "http://owlgaming.net/?page_id=112",
+	"fb": "http://findbook.owlgaming.net",
+	"b": "http://bugs.owlgaming.net",
+	"bug": "http://bugs.owlgaming.net/bug_report_page.php",
+	"t": "http://owlgaming.net/support.php"
+}

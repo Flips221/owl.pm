@@ -1,0 +1,53 @@
+extend layout
+
+block content
+  section.container
+    hgroup
+      h1 owl.pm
+    .row
+      section.col-xs-12.col-sm-6.col-md-6
+        section
+          h2 What is this?
+          p A tiny url redirect to shorten links, this domain is also used for other Owlgaming Sites.
+          h2 Examples?
+          p Click the links on the left, or see the examples below for examples on how to fill in the underlined parts.
+          ul
+            li
+              | Forums: #{''}
+              a(href='/f/365') Information Center
+            li
+              | Forms: #{''}
+              a(href='/fm/1') Submit a Script Suggestion
+            li
+              | Thread: #{''}
+              a(href='/5828') Useful Forum Links
+            li
+              | User: #{''}
+              a(href='/u/Chaos') A user
+            li
+              | Findbook: #{''}
+              a(href='/fb/ddavidsons') Daniel Davidsons
+            li
+              | Bugs: #{''}
+              a(href='/b/58') Example Bug Report
+            li
+              | New Bug Report: #{''}
+              a(href='/bug') Submit a new report
+            li
+              | Support Center: #{''}
+              a(href='/t') View the support center
+
+          h2 Who can I blame?
+          p: a(href='/u/cat') cat
+          p: a(href='/u/chaos') Chaos
+      section.col-xs-12.col-sm-6.col-md-6
+        h2 Current Redirects
+        blockquote
+          each route in routes
+            if route.path != "/"
+              if route.path.indexOf(':') > -1 || route.path.indexOf('*') > -1
+                != 'owl.pm' + route.path.replace('\*',':linkbook').replace(':', '<u>').replace('(\\d+)', '') + "</u>\n"
+              else
+                a(href=route.path)
+                  = 'owl.pm' + route.path
+                = "\n"

@@ -1,0 +1,60 @@
+#!/bin/env node
+
+var express = require('express')
+  , app = express()
+  , http = require('http')
+  , redirects = require('./static_redirects');
+
+
+app.configure(function() {
+  app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
+	app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP || '127.0.0.1')
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'jade');
+	app.use(app.router);
+});
+
+app.get('/f/:forum_id', function(req, res) {
+	res.redirect('https://forums.owlgaming.net/index.php?showforum=' + req.params.forum_id);
+});
+
+app.get('/fm/:form_id', function(req, res) {
+	res.redirect('https://forums.owlgaming.net/index.php?app=form&do=view_form&id=' + req.params.form_id);
+});
+
+app.get('/:thread_id(\\d+)', function(req, res) {
+	res.redirect('https://forums.owlgaming.net/index.php?showtopic=' + req.params.thread_id);
+});
+
+app.get('/u/:username', function(req, res) {
+	res.redirect('http://forums.owlgaming.net/member.php?username=' + req.params.username);
+});
+
+/*app.get('/lb/*', function(req, res) {
+	res.redirect('http://linkbook.owlgaming.net/index.php?do=/' + req.params[0]);
+})*/
+
+app.get('/fb/:page_name', function(req, res) {
+	res.redirect('http://findbook.owlgaming.net/' + req.params.page_name);
+})
+
+app.get('/b/:bug_id', function(req, res) {
+	res.redirect('http://bugs.owlgaming.net/view.php?id=' + req.params.bug_id);
+})
+
+app.get('/t/:ticket_id', function(req, res) {
+	res.redirect('http://owlgaming.net/support.php?tcid=' + req.params.ticket_id);
+})
+
+Object.keys(redirects).forEach(function(key) {
+	var value = redirects[key];
+	app.get('/' + key, function(req, res) {
+		res.redirect(value);
+	})
+})
+
+app.get('/', function(req, res) {
+	res.render('index', {routes: app.routes.get})
+});
+
+http.createServer(app).listen(app.get('port'), app.get('ip'));
