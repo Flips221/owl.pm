@@ -2,17 +2,19 @@
 	"pd": "http://pd.owlgaming.net",
 	"gun": "http://pd.owlgaming.net/viewforum.php?f=45",
 
-	"gov": "/f/459",
-	"laws": "/f/463",
+	"gov": "/f/257",
+	"laws": "/50899",
 
 	"fd": "http://fd.owlgaming.net",
 
-	"rules": "/f/366",
-	"news": "/f/500",
-	"script": "/f/369",
-	"ints": "https://owlgaming.net/library.php",
+	"rules": "/f/194",
+	"news": "/f/281",
+	"script": "/f/196",
+	"skins": "https://owlgaming.net/library/skins",
+	"vehs": "https://owlgaming.net/library/vehicles",
+	"ints": "https://owlgaming.net/library/interiors",
 	"fb": "http://findbook.owlgaming.net",
-	"b": "http://bugs.owlgaming.net",
-	"bug": "http://bugs.owlgaming.net/bug_report_page.php",
-	"t": "http://owlgaming.net/support.php"
+	"bug": "https://bugs.owlgaming.net/",
+	"dev": "http://dev.owlgaming.net/",
+	"t": "https://owlgaming.net/support/",
 }
