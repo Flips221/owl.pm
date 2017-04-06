@@ -30,7 +30,7 @@ app.get('/:thread_id(\\d+)', function(req, res) {
 });
 
 app.get('/u/:user_id', function(req, res) {
-	res.redirect('https://forums.owlgaming.net/index.php?app=core&module=members&controller=profile&id=' + req.params.username);
+	res.redirect('https://forums.owlgaming.net/index.php?app=core&module=members&controller=profile&id=' + req.params.user_id);
 });
 
 /*app.get('/lb/*', function(req, res) {
