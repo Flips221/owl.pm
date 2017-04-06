@@ -18,19 +18,19 @@ app.configure(function() {
 });
 
 app.get('/f/:forum_id', function(req, res) {
-	res.redirect('https://forums.owlgaming.net/index.php?showforum=' + req.params.forum_id);
+	res.redirect('https://forums.owlgaming.net/index.php?app=forums&module=forums&controller=forums&id=' + req.params.forum_id);
 });
 
 app.get('/fm/:form_id', function(req, res) {
-	res.redirect('https://forums.owlgaming.net/index.php?app=form&do=view_form&id=' + req.params.form_id);
+	res.redirect('https://forums.owlgaming.net/index.php?app=form&module=forms&controller=index&do=viewform&id=' + req.params.form_id);
 });
 
 app.get('/:thread_id(\\d+)', function(req, res) {
 	res.redirect('https://forums.owlgaming.net/index.php?showtopic=' + req.params.thread_id);
 });
 
-app.get('/u/:username', function(req, res) {
-	res.redirect('http://forums.owlgaming.net/member.php?username=' + req.params.username);
+app.get('/u/:user_id', function(req, res) {
+	res.redirect('https://forums.owlgaming.net/index.php?app=core&module=members&controller=profile&id=' + req.params.username);
 });
 
 /*app.get('/lb/*', function(req, res) {
@@ -38,15 +38,15 @@ app.get('/u/:username', function(req, res) {
 })*/
 
 app.get('/fb/:page_name', function(req, res) {
-	res.redirect('http://findbook.owlgaming.net/' + req.params.page_name);
+	res.redirect('https://findbook.owlgaming.net/' + req.params.page_name);
 })
 
 app.get('/b/:bug_id', function(req, res) {
-	res.redirect('http://bugs.owlgaming.net/view.php?id=' + req.params.bug_id);
+	res.redirect('https://bugs.owlgaming.net/view.php?id=' + req.params.bug_id);
 })
 
 app.get('/t/:ticket_id', function(req, res) {
-	res.redirect('http://owlgaming.net/support.php?tcid=' + req.params.ticket_id);
+	res.redirect('https://owlgaming.net/support/' + req.params.ticket_id);
 })
 
 Object.keys(redirects).forEach(function(key) {
