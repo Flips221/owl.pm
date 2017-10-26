@@ -13,7 +13,11 @@
 	"skins": "https://owlgaming.net/library/skins",
 	"vehs": "https://owlgaming.net/library/vehicles",
 	"ints": "https://owlgaming.net/library/interiors",
+
 	"fb": "http://findbook.owlgaming.net",
+	"fbp": "http://findbook.owlgaming.net",
+	"fbg": "http://findbook.owlgaming.net",
+
 	"bug": "https://bugs.owlgaming.net/",
 	"dev": "http://dev.owlgaming.net/",
 	"t": "https://owlgaming.net/support/"

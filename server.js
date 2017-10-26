@@ -41,6 +41,14 @@ app.get('/fb/:page_name', function(req, res) {
 	res.redirect('https://findbook.owlgaming.net/' + req.params.page_name);
 })
 
+app.get('/fbp/:page_title', function(req, res) {
+	res.redirect('https://findbook.owlgaming.net/pages/' + req.params.page_title);
+})
+
+app.get('/fbg/:group_name', function(req, res) {
+	res.redirect('https://findbook.owlgaming.net/groups/' + req.params.group_name);
+})
+
 app.get('/b/:bug_id', function(req, res) {
 	res.redirect('https://bugs.owlgaming.net/view.php?id=' + req.params.bug_id);
 })
